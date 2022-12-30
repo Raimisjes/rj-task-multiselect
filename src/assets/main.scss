@@ -1,0 +1,94 @@
+main {
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 20px;
+
+  .input-holder {
+    position: relative;
+
+    .reset-phrase {
+      position: absolute;
+      cursor: pointer;
+      right: 12px;
+      top: 8px;
+      transition: all 0.2s ease-in-out;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .option-holder {
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 10px;
+    max-height: 200px;
+    min-height: 200px;
+    overflow: auto;
+
+    .option {
+      display: block;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      padding: 5px 10px;
+
+      &:hover {
+        background-color: rgba(226, 226, 226, 0.6);
+      }
+      &:first-child {
+        border-radius: 10px 10px 0 0;
+      }
+      &:last-child {
+        border-radius: 0 0 10px 10px;
+      }
+      &.highlighted {
+        background-color:rgb(72, 13, 172);
+        color: #FFF;
+      }
+    }
+    &::-webkit-scrollbar {
+      width: 0;
+      margin-right: 5px;
+    }
+    &::-webkit-scrollbar-track { 
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color:rgb(180, 180, 180);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(180, 180, 180, 0.6);
+    }
+  }
+  .controls {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+
+    button {
+      max-width: 48px;
+      margin: 0 0 0.5rem 0;
+
+      span {
+        vertical-align: middle;
+        font-weight: 600;
+      }
+    }
+    @media (max-width: 768px) {
+      flex-flow: row wrap;
+      padding-top: 15px;
+
+      button {
+        span {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    margin: 20px auto;
+  }
+}
